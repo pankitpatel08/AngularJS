@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Angular JS</title>
+</head>
+
+<!-- ng-init="a=6;b=2;" -->
+<!-- ng-init="fname='Pankit';lname='Patel'" -->
+
+<body ng-app="myApp" ng-init="even=[2,4,6,8]">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <!-- {{"Hello" + " World"}}
+    {{ 5 + 3 }} -->
+    <!-- <p>The area is {{a*b}}</p>
+    <p>The area is <span ng-bind="a*b"></span></p> -->
+    <!-- <p>Fullname : {{fname + " " + lname}}</p>
+    <p>Fullname : <span ng-bind="fname + ' ' + lname"></span></p> -->
+    <p>{{even[2]}}</p>
+    <p> <span ng-bind="even[3]"></span></p>
+
+</body>
+
+</html>
