@@ -8,7 +8,7 @@
 <!-- ng-init="a=6;b=2;" -->
 <!-- ng-init="fname='Pankit';lname='Patel'" -->
 
-<body ng-app="myApp" ng-init="even=[2,4,6,8]">
+<body ng-app="myApp" ng-init="even=[0,1,2,3,4,6,8]">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <!-- {{"Hello" + " World"}}
@@ -17,9 +17,44 @@
     <p>The area is <span ng-bind="a*b"></span></p> -->
     <!-- <p>Fullname : {{fname + " " + lname}}</p>
     <p>Fullname : <span ng-bind="fname + ' ' + lname"></span></p> -->
-    <p>{{even[2]}}</p>
+    <!-- <p>{{even[2]}}</p>
     <p> <span ng-bind="even[3]"></span></p>
+    <p ng-repeat="number in even">Number is {{number}}</p> -->
+    <div ng-controller="MyController">
+        <h2>Reviews</h2>
+        <div ng-repeat="review in reviews">
+            <div style="background-color:#EEEEEE">
+                <p>{{review.comment}}</p>
+                <p><b>{{review.by}}</b></p>
+            </div>
+            
 
+        </div>
+
+        <form name="reviewForm" ng-submit="addReview()">
+            <p>{{form.comment}}</p><br />
+            <p>{{form.by}}</p>
+
+            <label>Comment</label><br />
+            <textarea ng-model="form.comment"></textarea> <br />
+            <label>Author</label> <br />
+            <input type="email" ng-model="form.by" /><br/>
+            <input type="submit" value="Add Review" />
+        </form>
+        <!-- {{name}} {{age}} {{weight}} -->
+        <!-- <p ng-hide='isSpy'>Firstname is {{firstname}}</p>
+        <p ng-hide='isSpy'>Lastname is {{lastname}}</p>
+        <p ng-hide='isSpy'>Fullname is {{fullname()}}</p>
+        <p ng-show='isSpy'>Codename is {{codename}}</p> -->
+        <!-- <div ng-repeat="employee in employees | orderBy:'-salary'">
+            <p>Firstname is {{employee.fname | uppercase | limitTo: 3}}</p>
+            <p>Lastname is {{employee.lname | lowercase}}</p>
+            <p>Salary is {{employee.salary | currency}}</p>
+        </div> -->
+
+        <!-- <button ng-click='count=count+1; toggleShow()'>Click</button>
+        <p ng-show="show"> Count is {{count}}</p> -->
+    </div>
 
 </body>
 
